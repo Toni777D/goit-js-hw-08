@@ -92,16 +92,12 @@ listGallery.insertAdjacentHTML("afterbegin", createMarkup(images));
 listGallery.addEventListener("click", event => {
   event.preventDefault();
   if (event.target.nodeName === "IMG") {
-    const largeImgSrc = event.currentTarget.dataset.original;
+    const largeImgSrc = event.target.dataset.source;
     console.log(largeImgSrc);
   }
-});
-
-listGallery.addEventListener("click", event => {
-  event.preventDefault();
 
   if (event.target.nodeName === "IMG") {
-    const largeImgSrc = event.currentTarget.dataset.original;
+    const largeImgSrc = event.target.dataset.source;
     const instance = basicLightbox.create(`
     <img src="${largeImgSrc}" width="800" height="600">
     `);
